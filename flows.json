@@ -140,7 +140,6 @@
         "id": "5ece0e85175c8435",
         "type": "modbus-read",
         "z": "5d883b66ab92c38f",
-        "d": true,
         "name": "",
         "topic": "",
         "showStatusActivities": false,
