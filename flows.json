@@ -2,7 +2,15 @@
     {
         "id": "5d883b66ab92c38f",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "control flow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "57d42cd62c098dd8",
+        "type": "tab",
+        "label": "ui flow",
         "disabled": false,
         "info": "",
         "env": []
@@ -137,6 +145,46 @@
         }
     },
     {
+        "id": "14d907ed7b4499d5",
+        "type": "ui_tab",
+        "name": "HOME",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6e5b89c308a4df50",
+        "type": "ui_tab",
+        "name": "SETTING",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8f13235dbf20f50e",
+        "type": "ui_group",
+        "name": "ST1",
+        "tab": "6e5b89c308a4df50",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8d333aa9bd32a13c",
+        "type": "ui_group",
+        "name": "ST2",
+        "tab": "6e5b89c308a4df50",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "5ece0e85175c8435",
         "type": "modbus-read",
         "z": "5d883b66ab92c38f",
@@ -159,7 +207,7 @@
         "ioFile": "",
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
-        "x": 310,
+        "x": 330,
         "y": 60,
         "wires": [
             [],
@@ -185,8 +233,8 @@
         "keepMsgProperties": false,
         "delayOnStart": false,
         "startDelayTime": "",
-        "x": 670,
-        "y": 220,
+        "x": 490,
+        "y": 260,
         "wires": [
             [],
             [
@@ -213,7 +261,7 @@
         "payload": "1",
         "payloadType": "num",
         "x": 350,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "d00da78360a53e66"
@@ -238,7 +286,7 @@
         "payload": "0",
         "payloadType": "num",
         "x": 350,
-        "y": 260,
+        "y": 300,
         "wires": [
             [
                 "d00da78360a53e66"
@@ -257,8 +305,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 840,
-        "y": 220,
+        "x": 700,
+        "y": 280,
         "wires": [
             []
         ]
@@ -293,8 +341,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1000,
-        "y": 140,
+        "x": 960,
+        "y": 320,
         "wires": []
     },
     {
@@ -309,8 +357,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 300,
+        "x": 700,
+        "y": 320,
         "wires": [
             []
         ]
@@ -391,75 +439,49 @@
         ]
     },
     {
-        "id": "e4f0793893c02ef1",
-        "type": "inject",
-        "z": "5d883b66ab92c38f",
+        "id": "e3e6afe300d43bca",
+        "type": "ui_text_input",
+        "z": "57d42cd62c098dd8",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 420,
+        "label": "",
+        "tooltip": "",
+        "group": "8f13235dbf20f50e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 340,
+        "y": 220,
         "wires": [
             []
         ]
     },
     {
-        "id": "1b046daff56b4ed4",
-        "type": "debug",
-        "z": "5d883b66ab92c38f",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "f9719ee526519525",
-        "type": "ui_switch",
-        "z": "5d883b66ab92c38f",
+        "id": "68c3416c987bda21",
+        "type": "ui_text_input",
+        "z": "57d42cd62c098dd8",
         "name": "",
-        "label": "switch",
+        "label": "",
         "tooltip": "",
+        "group": "8d333aa9bd32a13c",
         "order": 0,
         "width": 0,
         "height": 0,
         "passthru": true,
-        "decouple": "false",
+        "mode": "text",
+        "delay": 300,
         "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": true,
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": false,
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
+        "sendOnBlur": true,
         "className": "",
-        "x": 250,
-        "y": 560,
+        "topicType": "msg",
+        "x": 340,
+        "y": 280,
         "wires": [
             []
         ]
