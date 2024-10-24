@@ -16,6 +16,33 @@
         "env": []
     },
     {
+        "id": "40461bd5482c6f38",
+        "type": "group",
+        "z": "5d883b66ab92c38f",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "d6577d4db9cbded4",
+            "b97d8dcaebe9cc85",
+            "9415f762de6c9ced",
+            "bf8022099b6ce347",
+            "966379b5822bea96",
+            "20fc9533e15a9b16",
+            "ea6ce5623dba5f24"
+        ],
+        "x": 194,
+        "y": 1219,
+        "w": 1252,
+        "h": 302
+    },
+    {
         "id": "a88aefe847628dac",
         "type": "modbus-client",
         "name": "esp32",
@@ -24,7 +51,7 @@
         "stateLogEnabled": false,
         "queueLogEnabled": false,
         "failureLogEnabled": true,
-        "tcpHost": "192.168.1.9",
+        "tcpHost": "192.168.4.1",
         "tcpPort": "502",
         "tcpType": "DEFAULT",
         "serialPort": "/dev/ttyUSB",
@@ -254,6 +281,7 @@
         "id": "5ece0e85175c8435",
         "type": "modbus-read",
         "z": "5d883b66ab92c38f",
+        "d": true,
         "name": "",
         "topic": "",
         "showStatusActivities": false,
@@ -299,8 +327,8 @@
         "keepMsgProperties": false,
         "delayOnStart": false,
         "startDelayTime": "",
-        "x": 490,
-        "y": 260,
+        "x": 350,
+        "y": 360,
         "wires": [
             [],
             [
@@ -326,8 +354,8 @@
         "topic": "",
         "payload": "1",
         "payloadType": "num",
-        "x": 350,
-        "y": 260,
+        "x": 190,
+        "y": 320,
         "wires": [
             [
                 "d00da78360a53e66"
@@ -351,8 +379,8 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 350,
-        "y": 300,
+        "x": 190,
+        "y": 360,
         "wires": [
             [
                 "d00da78360a53e66"
@@ -371,10 +399,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 280,
+        "x": 500,
+        "y": 320,
         "wires": [
-            []
+            [
+                "bd242981480a314e"
+            ]
         ]
     },
     {
@@ -392,7 +422,9 @@
         "x": 500,
         "y": 60,
         "wires": [
-            []
+            [
+                "d5a24ed63c427214"
+            ]
         ]
     },
     {
@@ -407,8 +439,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 320,
+        "x": 660,
+        "y": 220,
         "wires": []
     },
     {
@@ -423,10 +455,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 320,
+        "x": 500,
+        "y": 360,
         "wires": [
-            []
+            [
+                "bd242981480a314e"
+            ]
         ]
     },
     {
@@ -472,16 +506,14 @@
         "repeat": "",
         "crontab": "",
         "once": false,
-        "onceDelay": 0.1,
+        "onceDelay": "0.5",
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 340,
-        "y": 160,
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 130,
+        "y": 120,
         "wires": [
-            [
-                "bc70a047a62ad53d"
-            ]
+            []
         ]
     },
     {
@@ -489,7 +521,7 @@
         "type": "function",
         "z": "5d883b66ab92c38f",
         "name": "function 4",
-        "func": "msg.payload = { value: msg.payload, 'fc': 4, 'unitid': 1, 'address': 100 , 'quantity': 1 } \nreturn msg",
+        "func": "msg.payload = { value: msg.payload, 'fc': 4, 'unitid': 1, 'address': 99 , 'quantity': 2 } \nreturn msg",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -502,6 +534,767 @@
             [
                 "f08ec2e45f2e304c"
             ]
+        ]
+    },
+    {
+        "id": "bd242981480a314e",
+        "type": "debug",
+        "z": "5d883b66ab92c38f",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d5a24ed63c427214",
+        "type": "debug",
+        "z": "5d883b66ab92c38f",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ef50845f60e3284b",
+        "type": "switch",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5808ea60c01cb295",
+        "type": "change",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "38cf39e93493cd0a",
+        "type": "function",
+        "z": "5d883b66ab92c38f",
+        "name": "function 5",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "015516edf27a0187",
+        "type": "switch",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d6577d4db9cbded4",
+        "type": "inject",
+        "z": "5d883b66ab92c38f",
+        "g": "40461bd5482c6f38",
+        "name": "1s rate",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1000",
+        "payloadType": "num",
+        "x": 310,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b97d8dcaebe9cc85",
+        "type": "inject",
+        "z": "5d883b66ab92c38f",
+        "g": "40461bd5482c6f38",
+        "name": "2s rate",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2000",
+        "payloadType": "num",
+        "x": 310,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9415f762de6c9ced",
+        "type": "inject",
+        "z": "5d883b66ab92c38f",
+        "g": "40461bd5482c6f38",
+        "name": "5s rate",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "5000",
+        "payloadType": "num",
+        "x": 310,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf8022099b6ce347",
+        "type": "inject",
+        "z": "5d883b66ab92c38f",
+        "g": "40461bd5482c6f38",
+        "name": "Stop",
+        "props": [
+            {
+                "p": "reset",
+                "v": "haha",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 570,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "966379b5822bea96",
+        "type": "comment",
+        "z": "5d883b66ab92c38f",
+        "g": "40461bd5482c6f38",
+        "name": "Programmable interval inject",
+        "info": "This flow functions and an inject node, but allows the interval to be changed.\nThe basic principle that the delay node output if fed back to itself through a change node which sets the appropriate delay for each message.\n\nThe 3 sample inject node set the interval to 1s, 2s, 5s. The interval is sent in the msg.payload in milliseconds.\nThese inject nodes can be supplemented with a dashboard input field (slider, dropdown) so it can be controlled from the screen as well.\nThis flow does not start sending out messages when deployed, if that is required, create another inject node with default rate and set to trigger on startup. \nI also added a \"Autostart with saved value\" this should be used if the flow variable is saved to file (in that case update the change nodes to use the file storage) so it can restart the trigger with the last delay value read from the file system (set this inject node to trigger on startup).\n\nThe interval is stored in a flow context variable, and this value is inserted into the message every time by the change node above the delay node. This ensures that if the rate value in the context value changes, it is applied at the next message.\n\nI added the delay 100ms and the msg.reset nodes, because when the rate changes it introduces a new message the recursive loop and that would mess up the timing.\n\n\"Stop\" inject node resets the delay node (deleted the message that keeps triggeting itelf) and stops the process.",
+        "x": 350,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "20fc9533e15a9b16",
+        "type": "inject",
+        "z": "5d883b66ab92c38f",
+        "g": "40461bd5482c6f38",
+        "name": "Autostart with saved value",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tick",
+        "payload": "trigger",
+        "payloadType": "str",
+        "x": 350,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ea6ce5623dba5f24",
+        "type": "comment",
+        "z": "5d883b66ab92c38f",
+        "g": "40461bd5482c6f38",
+        "name": "======SUBSCRIBE TO MY CHANNEL======",
+        "info": "",
+        "x": 1240,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "22dc4878e1812149",
+        "type": "ui_switch",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "cbd28290cff7840e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 190,
+        "y": 780,
+        "wires": [
+            [
+                "3c802eabfb2ec8f8"
+            ]
+        ]
+    },
+    {
+        "id": "3234f262056babaf",
+        "type": "delay",
+        "z": "5d883b66ab92c38f",
+        "name": "Recursive delay",
+        "pauseType": "delayv",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": true,
+        "outputs": 1,
+        "x": 1100,
+        "y": 800,
+        "wires": [
+            [
+                "572e6832bcf30618",
+                "ce8074e1a90a222c"
+            ]
+        ]
+    },
+    {
+        "id": "4158a248e1e2b3e4",
+        "type": "change",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ratelimit",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "tick",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "trigger",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 760,
+        "wires": [
+            [
+                "b300a73d7dc605ae",
+                "dc0ddfa85869080c"
+            ]
+        ]
+    },
+    {
+        "id": "572e6832bcf30618",
+        "type": "change",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "ratelimit",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 720,
+        "wires": [
+            [
+                "3234f262056babaf"
+            ]
+        ]
+    },
+    {
+        "id": "dc0ddfa85869080c",
+        "type": "change",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "reset",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 760,
+        "wires": [
+            [
+                "3234f262056babaf"
+            ]
+        ]
+    },
+    {
+        "id": "b300a73d7dc605ae",
+        "type": "delay",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 870,
+        "y": 720,
+        "wires": [
+            [
+                "572e6832bcf30618"
+            ]
+        ]
+    },
+    {
+        "id": "ce8074e1a90a222c",
+        "type": "debug",
+        "z": "5d883b66ab92c38f",
+        "name": "debug 37",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "eb4de153e0cf18df",
+        "type": "function",
+        "z": "5d883b66ab92c38f",
+        "name": "function 6",
+        "func": "\nmsg.payload = 2000;\nmsg.topic=\"\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 760,
+        "wires": [
+            [
+                "4158a248e1e2b3e4"
+            ]
+        ]
+    },
+    {
+        "id": "3c802eabfb2ec8f8",
+        "type": "switch",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 780,
+        "wires": [
+            [
+                "eb4de153e0cf18df"
+            ],
+            [
+                "58bd7874bee17ffa"
+            ]
+        ]
+    },
+    {
+        "id": "58bd7874bee17ffa",
+        "type": "function",
+        "z": "5d883b66ab92c38f",
+        "name": "function 7",
+        "func": "msg.reset = \"haha\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 800,
+        "wires": [
+            [
+                "3234f262056babaf"
+            ]
+        ]
+    },
+    {
+        "id": "8444dd95fa41f971",
+        "type": "inject",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 170,
+        "y": 700,
+        "wires": [
+            [
+                "22dc4878e1812149",
+                "3130c5cbfb256eb2",
+                "af16e9cacf702ca1",
+                "d4cffc4dca0e1bf4",
+                "c6aa67cb06cc2710",
+                "477e10a0b97e3457",
+                "42709803da243898"
+            ]
+        ]
+    },
+    {
+        "id": "3130c5cbfb256eb2",
+        "type": "debug",
+        "z": "5d883b66ab92c38f",
+        "name": "debug 38",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "af16e9cacf702ca1",
+        "type": "ui_switch",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "c2edbec94b594986",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 190,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d4cffc4dca0e1bf4",
+        "type": "ui_switch",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "137cf211fbdde820",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 190,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6aa67cb06cc2710",
+        "type": "ui_switch",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "adfdd2d9a43a588b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 190,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "477e10a0b97e3457",
+        "type": "ui_switch",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "cbd28290cff7840e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 190,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "42709803da243898",
+        "type": "ui_switch",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "1491ea569eef9705",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 190,
+        "y": 1080,
+        "wires": [
+            []
         ]
     },
     {
