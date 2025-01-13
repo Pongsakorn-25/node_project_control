@@ -4,7 +4,8 @@
     "version": "0.0.1",
     "dependencies": {
         "node-red-contrib-modbus": "5.42.0",
-        "node-red-dashboard": "3.6.5"
+        "node-red-dashboard": "3.6.5",
+        "node-red-contrib-ip": "1.0.1"
     },
     "node-red": {
         "settings": {
