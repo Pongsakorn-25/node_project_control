@@ -2,7 +2,10 @@
     "name": "node_project_control",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-modbus": "5.42.0",
+        "node-red-dashboard": "3.6.5"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
