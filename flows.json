@@ -174,7 +174,7 @@
     {
         "id": "14d907ed7b4499d5",
         "type": "ui_tab",
-        "name": "กลุ่ม 1",
+        "name": "หน้าที่ 1",
         "icon": "",
         "order": 1,
         "disabled": false,
@@ -183,7 +183,7 @@
     {
         "id": "cbd28290cff7840e",
         "type": "ui_group",
-        "name": "สถานีฐานที่ 1",
+        "name": "เครื่อง",
         "tab": "14d907ed7b4499d5",
         "order": 1,
         "disp": true,
@@ -194,7 +194,7 @@
     {
         "id": "c2edbec94b594986",
         "type": "ui_group",
-        "name": "สถานีฐานที่ 2",
+        "name": "โรงเรือนที่1",
         "tab": "14d907ed7b4499d5",
         "order": 2,
         "disp": true,
@@ -205,7 +205,7 @@
     {
         "id": "137cf211fbdde820",
         "type": "ui_group",
-        "name": "สถานีฐานที่ 3",
+        "name": "โรงเรือนที่2",
         "tab": "ad6ffc42dd70a159",
         "order": 3,
         "disp": true,
@@ -216,7 +216,7 @@
     {
         "id": "adfdd2d9a43a588b",
         "type": "ui_group",
-        "name": "สถานีฐานที่ 4",
+        "name": "โรงเรือนที่3",
         "tab": "ad6ffc42dd70a159",
         "order": 4,
         "disp": true,
@@ -227,7 +227,7 @@
     {
         "id": "fbfe52798d66e999",
         "type": "ui_group",
-        "name": "สถานีฐานที่ 5",
+        "name": "โรงเรือนที่4",
         "tab": "d012971672606c24",
         "order": 5,
         "disp": true,
@@ -388,7 +388,7 @@
     {
         "id": "ad6ffc42dd70a159",
         "type": "ui_tab",
-        "name": "กลุ่ม 2",
+        "name": "หน้าที่ 2",
         "icon": "",
         "order": 2,
         "disabled": false,
@@ -397,7 +397,7 @@
     {
         "id": "d42f4af06bc50e7c",
         "type": "ui_tab",
-        "name": "UTILITY",
+        "name": "ตั้งค่า",
         "icon": "fa-cog",
         "order": 4,
         "disabled": false,
@@ -409,30 +409,8 @@
         "name": "kill windows",
         "tab": "d42f4af06bc50e7c",
         "order": 2,
-        "disp": true,
+        "disp": false,
         "width": "8",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "c67235844a47b630",
-        "type": "ui_group",
-        "name": "ip",
-        "tab": "d42f4af06bc50e7c",
-        "order": 1,
-        "disp": true,
-        "width": "8",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "3fd3ee120138dbb4",
-        "type": "ui_group",
-        "name": "open dashboard",
-        "tab": "d42f4af06bc50e7c",
-        "order": 3,
-        "disp": true,
-        "width": "6",
         "collapse": false,
         "className": ""
     },
@@ -442,7 +420,7 @@
         "name": "shutdown",
         "tab": "d42f4af06bc50e7c",
         "order": 4,
-        "disp": true,
+        "disp": false,
         "width": "8",
         "collapse": false,
         "className": ""
@@ -453,7 +431,7 @@
         "name": "reboot",
         "tab": "d42f4af06bc50e7c",
         "order": 5,
-        "disp": true,
+        "disp": false,
         "width": "8",
         "collapse": false,
         "className": ""
@@ -461,39 +439,11 @@
     {
         "id": "d012971672606c24",
         "type": "ui_tab",
-        "name": "กลุ่ม 3",
+        "name": "หน้าที่ 3",
         "icon": "",
         "order": 3,
         "disabled": false,
         "hidden": false
-    },
-    {
-        "id": "e5d33deca34fe64a",
-        "type": "ui_group",
-        "name": "Group 1",
-        "tab": "d012971672606c24",
-        "order": 1,
-        "disp": true,
-        "width": 6
-    },
-    {
-        "id": "7533637c3e11c0fc",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "fba23f6ea370b93a",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "7533637c3e11c0fc",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
     },
     {
         "id": "1fd2212d8895c598",
@@ -584,6 +534,28 @@
         "showErrors": false,
         "showWarnings": true,
         "showLogs": true
+    },
+    {
+        "id": "fe77c920725b4e40",
+        "type": "ui_group",
+        "name": "ip2",
+        "tab": "d42f4af06bc50e7c",
+        "order": 6,
+        "disp": false,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9b21039a48847e01",
+        "type": "ui_group",
+        "name": "ip3",
+        "tab": "d42f4af06bc50e7c",
+        "order": 7,
+        "disp": false,
+        "width": "8",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "5ece0e85175c8435",
@@ -3472,8 +3444,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 890,
-        "y": 2040,
+        "x": 670,
+        "y": 1920,
         "wires": [
             [],
             [],
@@ -3501,8 +3473,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 640,
-        "y": 2040,
+        "x": 220,
+        "y": 1920,
         "wires": [
             [
                 "4aa82f2db03d8e05"
@@ -3519,18 +3491,18 @@
         "width": "8",
         "height": "2",
         "passthru": false,
-        "label": "ปิดหน้าจอ",
+        "label": "ปิดโปรแกรม",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
-        "className": "",
+        "className": "fa-2x",
         "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 660,
-        "y": 2100,
+        "x": 450,
+        "y": 1920,
         "wires": [
             [
                 "4aa82f2db03d8e05"
@@ -3545,42 +3517,16 @@
         "https": false,
         "timeout": "5000",
         "internalIPv4": true,
-        "internalIPv6": true,
-        "publicIPv4": false,
+        "internalIPv6": false,
+        "publicIPv4": true,
         "publicIPv6": false,
-        "x": 650,
-        "y": 1960,
-        "wires": [
-            [
-                "d677d66e5bee90b4"
-            ]
-        ]
-    },
-    {
-        "id": "d677d66e5bee90b4",
-        "type": "ui_button",
-        "z": "5d883b66ab92c38f",
-        "name": "",
-        "group": "c67235844a47b630",
-        "order": 0,
-        "width": "8",
-        "height": "2",
-        "passthru": false,
-        "label": "{{msg.payload.internalIPv4}}",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
         "x": 470,
-        "y": 1960,
+        "y": 1760,
         "wires": [
             [
-                "b1149f338cc0b8e3"
+                "6c0c21dcb930a771",
+                "88318bf7e373c171",
+                "a334cd5053159660"
             ]
         ]
     },
@@ -3617,8 +3563,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 890,
-        "y": 2200,
+        "x": 670,
+        "y": 1980,
         "wires": [
             [],
             [],
@@ -3635,18 +3581,18 @@
         "width": "8",
         "height": "2",
         "passthru": false,
-        "label": "reboot",
+        "label": "รีบูทเครื่อง",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
-        "className": "",
+        "className": "fa-2x",
         "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 650,
-        "y": 2200,
+        "x": 460,
+        "y": 1980,
         "wires": [
             [
                 "084f14bba103fc0d"
@@ -3665,8 +3611,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 900,
-        "y": 2340,
+        "x": 680,
+        "y": 2040,
         "wires": [
             [],
             [],
@@ -3683,18 +3629,18 @@
         "width": "8",
         "height": "2",
         "passthru": false,
-        "label": "shutdown",
+        "label": "ปิดเครื่อง",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
-        "className": "",
+        "className": "fa-2x",
         "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 660,
-        "y": 2340,
+        "x": 460,
+        "y": 2040,
         "wires": [
             [
                 "6e28ed2ade5f635a"
@@ -3722,7 +3668,7 @@
         "payloadType": "bool",
         "topic": "topic",
         "topicType": "msg",
-        "x": 730,
+        "x": 570,
         "y": 1260,
         "wires": [
             [
@@ -3742,7 +3688,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
+        "x": 740,
         "y": 1260,
         "wires": []
     },
@@ -3764,8 +3710,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 390,
-        "y": 1260,
+        "x": 630,
+        "y": 1300,
         "wires": []
     },
     {
@@ -4201,6 +4147,107 @@
         "wires": [
             [
                 "f353dffbd1d90b88"
+            ]
+        ]
+    },
+    {
+        "id": "6c0c21dcb930a771",
+        "type": "debug",
+        "z": "5d883b66ab92c38f",
+        "name": "debug 52",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "d0d7586fe94873ce",
+        "type": "inject",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1760,
+        "wires": [
+            [
+                "b1149f338cc0b8e3"
+            ]
+        ]
+    },
+    {
+        "id": "88318bf7e373c171",
+        "type": "ui_button",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "group": "9b21039a48847e01",
+        "order": 0,
+        "width": "8",
+        "height": "2",
+        "passthru": false,
+        "label": "{{msg.payload.internalIPv4}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "fa-lg",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 470,
+        "y": 1880,
+        "wires": [
+            [
+                "b1149f338cc0b8e3"
+            ]
+        ]
+    },
+    {
+        "id": "a334cd5053159660",
+        "type": "ui_button",
+        "z": "5d883b66ab92c38f",
+        "name": "",
+        "group": "fe77c920725b4e40",
+        "order": 0,
+        "width": "8",
+        "height": "2",
+        "passthru": false,
+        "label": "{{msg.payload.publicIPv4}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "fa-lg",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 470,
+        "y": 1820,
+        "wires": [
+            [
+                "b1149f338cc0b8e3"
             ]
         ]
     },
@@ -4660,7 +4707,7 @@
         "type": "function",
         "z": "57d42cd62c098dd8",
         "name": "tem/hum",
-        "func": "\n\nlet t = msg.payload[0];\nlet h = msg.payload[1];\nh = h/100;\nt = t/100;\nglobal.set(\"temp2\",t);\nreturn [\n       {payload:t,topic:\"อุณหภูมิ\"},\n        {payload:h,topic:\"ความชื้น\"}];",
+        "func": "\n\nlet t = msg.payload[1];\nlet h = msg.payload[0];\nh = h/100;\nt = t/100;\nglobal.set(\"temp2\",t);\nreturn [\n       {payload:t,topic:\"อุณหภูมิ\"},\n        {payload:h,topic:\"ความชื้น\"}];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -4916,7 +4963,7 @@
         "unitid": "1",
         "dataType": "MCoils",
         "adr": "99",
-        "quantity": "2",
+        "quantity": "1",
         "server": "a88aefe847628dac",
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
@@ -4999,5 +5046,26 @@
         "x": 1185,
         "y": 340,
         "wires": []
+    },
+    {
+        "id": "78e55ef63e25b841",
+        "type": "ui_template",
+        "z": "57d42cd62c098dd8",
+        "group": "fe77c920725b4e40",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    button {\n        font-size: 1.33333333em !important;\n        line-height: 0.75em !important;\n        vertical-align: -15% !important;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "css",
+        "x": 540,
+        "y": 80,
+        "wires": [
+            []
+        ]
     }
 ]
